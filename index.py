@@ -136,6 +136,24 @@ class Goutte():
         canvas.move(self.element, 0, self.v)
         root.after(50, self.fall)
         self.y = self.y+self.v
+        if self.y > height:
+            self.y = 0
+            canvas.move(self.element, 0, -height)
+
+
+class Pluie():
+    def __init__(self, nm_gouttes):
+        self.nm_gouttes = nm_gouttes
+        self.gouttes = []
+
+        for i in range(self.nm_gouttes):
+            self.gouttes.append(Goutte(random.randint(
+                0, width), random.randint(-50, -25), random.randint(1, 5)))
+
+    def mouille(self):
+        for i in range(self.nm_gouttes):
+            self.gouttes[i].fall()
+            self.gouttes[i].display()
 
 
 goutte = Goutte(100, 500, 1)
@@ -145,6 +163,10 @@ goutte2.display()
 
 goutte.fall()
 goutte2.fall()
+
+pluie = Pluie(50)
+
+pluie.mouille()
 # sleep(2)
 
 # goutte.display()
