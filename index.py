@@ -1,6 +1,7 @@
 # Découverte code orienté objet
 from tkinter import *
 import random
+from time import sleep
 
 width = 800
 height = 800
@@ -120,6 +121,34 @@ colors = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
 # -------------------------------------------------------------------------------
 # Purplerain
 
-canvas.pack(padx=0, pady=00)
+class Goutte():
+    def __init__(self, a, b, v):
+        self.x = a
+        self.y = b
+        self.v = v
+        self.element = ''
+
+    def display(self):
+        self.element = canvas.create_rectangle(self.x, self.y, self.x+3,
+                                               self.y+10, fill='pink', width=0)
+
+    def fall(self):
+        canvas.move(self.element, 0, self.v)
+        root.after(50, self.fall)
+        self.y = self.y+self.v
+
+
+goutte = Goutte(100, 500, 1)
+goutte.display()
+goutte2 = Goutte(700, 350, 2)
+goutte2.display()
+
+goutte.fall()
+goutte2.fall()
+# sleep(2)
+
+# goutte.display()
+
+canvas.pack(side=LEFT, padx=0, pady=00)
 root.title("coucou")
 root.mainloop()
