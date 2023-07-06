@@ -9,7 +9,7 @@ height = 1000
 root = Tk()
 
 canvas = Canvas(root, width=width, height=height, background="white")
-
+# Mondrian
 # # colors inside
 # canvas.create_rectangle(0, 0, 50, 100, fill='red', width=0)
 # canvas.create_rectangle(65, 115, 390, 290, fill='yellow', width=0)
@@ -24,7 +24,19 @@ canvas = Canvas(root, width=width, height=height, background="white")
 # canvas.create_oval(500, 500, 550, 580, fill='orange', width=0)
 # canvas.create_oval(100, 500, 200, 600, fill='green', width=0)
 
-canvas.pack(padx=11, pady=00)
+# ---------------------------------------------------------------
+# Vasarely
+for i in range(11):
+    canvas.create_rectangle(100*i, 0, 100*i+5, 1000, fill='black', width=0)
+    canvas.create_rectangle(0, 100*i, 1000, 100*i+5, fill='black', width=0)
+    for j in range(10):
+        canvas.create_oval(100*i + 25, 100*j+25, 100*i+75,
+                           100*j+75, fill='orange', width=0)
+
+# for i in range(10):
+#     canvas.create_oval(25, 100*i + 25, 75, 100*i+75, fill='orange', width=0)
+
+canvas.pack(padx=0, pady=00)
 root.title("coucou")
 root.mainloop()
 
