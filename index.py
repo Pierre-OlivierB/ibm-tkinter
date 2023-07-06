@@ -2,14 +2,14 @@
 from tkinter import *
 import random
 
-# width = 800
-# height = 800
-width = 1000
-height = 1000
+width = 800
+height = 800
+# width = 1000
+# height = 1000
 
 root = Tk()
 
-canvas = Canvas(root, width=width, height=height, background="white")
+canvas = Canvas(root, width=width, height=height, background="purple")
 # Mondrian
 # # colors inside
 # canvas.create_rectangle(0, 0, 50, 100, fill='red', width=0)
@@ -103,17 +103,22 @@ colors = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
           'gray75', 'gray76', 'gray77', 'gray78', 'gray79', 'gray80', 'gray81', 'gray82', 'gray83',
           'gray84', 'gray85', 'gray86', 'gray87', 'gray88', 'gray89', 'gray90', 'gray91', 'gray92',
           'gray93', 'gray94', 'gray95', 'gray97', 'gray98', 'gray99']
-
-for i in range(11):
-    canvas.create_rectangle(100*i, 0, 100*i+5, 1000, fill='black', width=0)
-    canvas.create_rectangle(0, 100*i, 1000, 100*i+5, fill='black', width=0)
-    for j in range(10):
-        ran = random.randint(0, len(colors))
-        canvas.create_oval(100*i + 25, 100*j+25, 100*i+75,
-                           100*j+75, fill=colors[ran], width=0)
+# case
+# for i in range(11):
+#     canvas.create_rectangle(100*i, 0, 100*i+5, 1000, fill='black', width=0)
+#     canvas.create_rectangle(0, 100*i, 1000, 100*i+5, fill='black', width=0)
+#     for j in range(10):
+#         # colors random
+#         ran = random.randint(0, len(colors))
+#         canvas.create_oval(100*i + 25, 100*j+25, 100*i+75,
+#                            100*j+75, fill=colors[ran], width=0)
 
 # for i in range(10):
 #     canvas.create_oval(25, 100*i + 25, 75, 100*i+75, fill='orange', width=0)
+
+
+# -------------------------------------------------------------------------------
+# Purplerain
 
 canvas.pack(padx=0, pady=00)
 root.title("coucou")
